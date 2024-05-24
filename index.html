@@ -1,21 +1,54 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Nishat Samanta Progga">
+    <meta name="description" content="Temperature Converter">
+    <meta name="keywords" content="html, css, web, web development, javascript">
     <title>Temperature Converter</title>
-    <link rel="stylesheet" type="text/css" href="index.css" />
-  </head>
-  <body>
-    <div id="container">
-      <h1>Temperature Converter</h1>
-      <form id="temperature-converter">
-        <label for="temperature">Enter temperature:</label>
-        <input type="text" id="temperature" name="temperature" />
-        <button type="button" id="convert-button">Convert</button>
-        <span id="convert-from">Fahrenheit</span>
-        <span id="convert-to">to Celsius</span>
-        <input type="text" id="result" name="result" disabled />
-      </form>
-    </div>
-    <script src="index.js"></script>
-  </body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/index.css" media="all">
+    <script src="./assets/script/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container flex space-between">
+            <h1>Temperature Converter</h1>
+            <nav>
+                <ul class="flex">
+                    <li><a href="#" target="_blank">Projects</a></li>
+                    <li><a href="#" target="_blank">About me</a></li>
+                    <li><a href="#" target="_blank">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h3 id="title-text">Converter</h3>
+                <form>
+                    <input type="text" class="input" id="temperature-input" placeholder="Enter Temperature">
+                    <input type="button" class="convert" value="Convert" onclick="convertTemperature()">
+                    <div class="radio">
+                        <input type="radio" id="to-fahrenheit" name="temp-unit" value="To Fahrenheit" checked>
+                        <label for="to-fahrenheit">To Fahrenheit</label>
+                        <input type="radio" id="to-celsius" name="temp-unit" value="To Celsius">
+                        <label for="to-celsius">To Celsius</label>
+                    </div>
+                </form>
+                <div class="output">
+                    <p id="result-text"></p>
+                </div>
+            </section>
+        </div>
+        <button id="mode-toggle" onclick="toggleTheme()">
+            <p>Dark mode</p>
+        </button>
+    </main>
+</body>
 </html>
